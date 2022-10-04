@@ -1,6 +1,23 @@
 import java.util.Scanner;
 
+class Refector{
+    //강사님 풀이
+    private  String getEvenOdd(int num){
+        if(num%2==0){
+            return "짝수";
+        }
+        else{
+            return "홀수";
+        }
+    }
+    public void printEvenOddStatement(int first, int sec){
+        System.out.println(getEvenOdd(first)+"+"+getEvenOdd(sec)+"="+getEvenOdd(first+sec));
+    }
+}
 public class CodeUp1161 {
+
+
+
     public static void main(String[] args) {
 //        정수 두개가 입력으로 들어온다.
 //
@@ -21,23 +38,26 @@ public class CodeUp1161 {
 
         if(num1%2==0){
             System.out.print("짝수");
-        }
-        else{
+        } else{
             System.out.print("홀수");
         }
         System.out.print("+");
         if(num2%2==0){
             System.out.print("짝수");
-        }
-        else{
+        } else{
             System.out.print("홀수");
         }
+
         System.out.print("=");
         if((num1+num2)%2==0){
             System.out.print("짝수");
-        }
-        else{
+        } else{
             System.out.print("홀수");
         }
+
+        Refector printAns = new Refector();
+        printAns.printEvenOddStatement(num1,num2);
+
+
     }
 }
