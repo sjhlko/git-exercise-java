@@ -1,9 +1,9 @@
 public class CalculatorMain {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
-        calculator.plus(1,2);
-        calculator.minus(1,2);
-        calculator.devide(1,2);
-        calculator.multiple(1,2);
+        Calculator calculator = new Calculator(1,2);
+        calculator.plus();
+        calculator.minus();
+        calculator.devide();
+        calculator.multiple();
     }
 }
