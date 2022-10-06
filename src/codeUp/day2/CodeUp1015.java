@@ -1,11 +1,11 @@
-package CodeUpDay2;
+package codeUp.day2;
 
 import java.util.Scanner;
 
-public class CodeUp1011 {
+public class CodeUp1015 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        char x = sc.next().charAt(0);
-        System.out.println(x);
+        float x= sc.nextFloat();
+        System.out.printf("%.2f",x);
     }
 }
