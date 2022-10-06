@@ -1,8 +1,8 @@
 package month10.week2.fileIO;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+
+
+import java.io.*;
 
 public class ReadFile {
     private String filename;
@@ -42,7 +42,13 @@ public class ReadFile {
 
         return s;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        File dir= new File("./");
+        //file 목록 읽기
+        File files[] = dir.listFiles();
+        for (File file : files) {
+            System.out.println(file);
+        }
         ReadFile readFile = new ReadFile("");
         try{
             char c = readFile.readByte("./a_file.txt");
