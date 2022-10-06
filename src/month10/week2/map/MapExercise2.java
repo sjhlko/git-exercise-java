@@ -3,6 +3,13 @@ package month10.week2.map;
 import java.util.HashMap;
 
 public class MapExercise2 {
+    public boolean isAlphabet(char alphabet){
+        if((alphabet>='A'&&alphabet<'Z')||(alphabet>'a'&&alphabet<'z')){
+            return true;
+
+        }
+        else return false;
+    }
     public static void main(String[] args) {
         HashMap alphabet= new HashMap<Character,Integer>();
         String s = new String("https://github.com/dongyeon-0822/java-project-exercise");
