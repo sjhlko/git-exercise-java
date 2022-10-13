@@ -12,12 +12,12 @@ public class Hospital {
 
 
     public String getDistrict() {
-        return district;
+        return this.district;
     }
 
     public String setDistrict() {
-        String[ ] splitted = this.address.split("");
-        return String.format("%s, %s", splitted[0],splitted[1]);
+        String[ ] splitted = this.address.split(" ");
+        return String.format("%s %s", splitted[0],splitted[1]);
     }
 
     public Hospital(String id, String address, String category, int emergencyRoom, String name, String subdivision) {
@@ -36,5 +36,21 @@ public class Hospital {
 
     public String getId() {
         return this.id;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public int getEmergencyRoom() {
+        return emergencyRoom;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSubdivision() {
+        return subdivision;
     }
 }
