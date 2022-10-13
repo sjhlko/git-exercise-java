@@ -3,16 +3,31 @@ package month10.week3.hospital.com.line.domain;
 public class Hospital {
     private  String id;
     private  String address;
+    private  String district;
+    private String category;
+    private int emergencyRoom;
+    private  String name;
+    private String subdivision;
 
-    public Hospital parse;
 
-    public Hospital(String s) {
-        this.id=s.replaceAll("\"","");
+
+    public String getDistrict() {
+        return district;
     }
 
-    public Hospital(String id, String address) {
+    public String setDistrict() {
+        String[ ] splitted = this.address.split("");
+        return String.format("%s, %s", splitted[0],splitted[1]);
+    }
+
+    public Hospital(String id, String address, String category, int emergencyRoom, String name, String subdivision) {
         this.id = id;
         this.address = address;
+        this.category = category;
+        this.district= setDistrict();
+        this.emergencyRoom = emergencyRoom;
+        this.name = name;
+        this.subdivision = subdivision;
     }
 
     public String getAddress() {
