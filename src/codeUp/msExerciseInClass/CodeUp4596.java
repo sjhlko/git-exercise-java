@@ -11,7 +11,7 @@ public class CodeUp4596 {
         for(int i=1;i<10;i++){
             for(int j=1;j<10;j++){
                 int now= sc.nextInt();
-                if(max<now){
+                if(max<now||(i==1&&j==1)){
                     max= now;
                     indexX=i;
                     indexY=j;

@@ -20,20 +20,20 @@ public class PopulationStatistics {
 
 
     }
-    public List<PopulationMove> readByLine(String filename) throws IOException{
-        List<PopulationMove> pm = new PopulationMove(filename);
-        BufferedReader reader = new BufferedReader(
-                new FileReader(filename)
-        );
-        String str;
-        while((str = reader.readLine())!=null){
-            System.out.println(str);
-            PopulationMove pm = parse(str);
-        }
-        reader.close();
-
-
-    }
+//    public List<PopulationMove> readByLine(String filename) throws IOException{
+////        List<PopulationMove> pm = new PopulationMove(filename);
+////        BufferedReader reader = new BufferedReader(
+////                new FileReader(filename)
+////        );
+////        String str;
+////        while((str = reader.readLine())!=null){
+////            System.out.println(str);
+////            PopulationMove pm = parse(str);
+////        }
+////        reader.close();
+//
+//
+//    }
 
     public void createAFile(String filename){
         File file = new File(filename);
@@ -64,31 +64,31 @@ public class PopulationStatistics {
         return populationMove.getFromSido()+","+ populationMove.getToSido();
     }
 
-    public Map<String,Integer> getMoveCntMap(List<PopulationMove> pml){
-        Map<String,Integer> moveCntMap = new HashMap<>();
-        for (PopulationMove pm: pml) {
-            String key = pm.getFromSido() + "," +pm.getToSido();
-            if(moveCntMap.get(key)==null){
-                moveCntMap.put(key,1);
-            }
-            moveCntMap.put(key,moveCntMap.get(key)+1);
-            return moveCntMap;
-        }
-
-    }
+//    public Map<String,Integer> getMoveCntMap(List<PopulationMove> pml){
+//        Map<String,Integer> moveCntMap = new HashMap<>();
+//        for (PopulationMove pm: pml) {
+//            String key = pm.getFromSido() + "," +pm.getToSido();
+//            if(moveCntMap.get(key)==null){
+//                moveCntMap.put(key,1);
+//            }
+//            moveCntMap.put(key,moveCntMap.get(key)+1);
+//            return moveCntMap;
+//        }
+//
+//    }
 
     public static void main(String[] args) throws IOException {
         String address="C:\\Users\\User\\Downloads\\2021_인구관련연간자료_20220927_66125.csv";
         PopulationStatistics populationStatistics = new PopulationStatistics();
-        List<PopulationMove> pml = populationStatistics.readByLine(address);
-        List<String> strings = new ArrayList<>();
-        for (PopulationMove populationMove : pml) {
-            //System.out.printf("전입: %s, 전출: %s",populationMove.getFromSido(),populationMove.getToSido());
-            String fromTo =populationStatistics.fromToString(populationMove);
-            strings.add(fromTo);
-        }
-        Map<String,Integer> moveCntMap =new HashMap<>();
-        populationStatistics.write(strings,"./from_to.txt");
+//        //List<PopulationMove> pml = populationStatistics.readByLine(address);
+//        List<String> strings = new ArrayList<>();
+//        for (PopulationMove populationMove : pml) {
+//            //System.out.printf("전입: %s, 전출: %s",populationMove.getFromSido(),populationMove.getToSido());
+//            String fromTo =populationStatistics.fromToString(populationMove);
+//            strings.add(fromTo);
+//        }
+//        Map<String,Integer> moveCntMap =new HashMap<>();
+//        populationStatistics.write(strings,"./from_to.txt");
 
     }
 }
