@@ -55,6 +55,8 @@ public class Programmers12909 {
                 case ']':
                     nextpop = '[';
                     break;
+                default:
+                    continue;
             }
             if(st.empty())
                 return false;
@@ -65,16 +67,16 @@ public class Programmers12909 {
         return st.empty();
     }
 
-//    public static void main(String[] args) {
-//        Programmers12909 ps = new Programmers12909();
-//        Scanner sc = new Scanner(System.in);
-//        String s =sc.next();
-//        String[] splitted = s.split("\\.");
-//        for (int i = 0; i < splitted.length; i++) {
-//            System.out.println(ps.solutionForAllBrackets(splitted[i]));
-//
-//        }
-//
-//    }
+    public static void main(String[] args) {
+        Programmers12909 ps = new Programmers12909();
+        Scanner sc = new Scanner(System.in);
+        String s;
+        while (true) {
+            s = sc.nextLine();
+            if(s.equals(".")) break;
+            System.out.println(ps.solutionForAllBrackets(s)?"yes":"no");
+        }
+
+    }
 
 }
