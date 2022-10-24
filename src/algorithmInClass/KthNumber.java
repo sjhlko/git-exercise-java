@@ -4,6 +4,7 @@ package algorithmInClass;
 //k번째 수
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 public class KthNumber {
     public int[] solution(int[] array, int[][] commands) {
@@ -17,7 +18,22 @@ public class KthNumber {
 
         return answer;
     }
-    public static void main(String[] args) {
 
+    public int[] solution2(int[] array, int[][] commands) {
+        int[] answer = new int[commands.length];
+        for(int i=0;i< commands.length;i++){
+            PriorityQueue<Integer> pq = new PriorityQueue<>();
+            for(int j=commands[i][0]-1;j<=commands[i][1]-1;j++) {
+                pq.offer(array[j]);
+            }
+            int result =-1;
+            for(int j=0;j< commands[i][2];j++){
+                result = pq.poll();
+            }
+            answer[i]=result;
+        }
+
+
+        return answer;
     }
 }
