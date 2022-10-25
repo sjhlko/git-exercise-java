@@ -1,4 +1,4 @@
-package algorithmInClass;
+package algorithmInClass.kthNumber;
 
 //https://school.programmers.co.kr/learn/courses/30/lessons/42748?language=java
 //k번째 수
