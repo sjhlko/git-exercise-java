@@ -11,10 +11,11 @@ public class BaekJoon20301 {
         StringBuilder sb = new StringBuilder();
 
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        int N = Integer.parseInt(st.nextToken());
-        int K = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
+        int N = Integer.valueOf(st.nextToken());
+        int K = Integer.valueOf(st.nextToken());
+        int M = Integer.valueOf(st.nextToken());
         Deque<Integer> deque = new LinkedList<>();
+        Scanner sc = new Scanner(System.in);
         for(int i=1;i<=N;i++){
             deque.offer(i);
         }
