@@ -8,16 +8,20 @@ import java.util.Map;
 public class Programmers42576 {
     class SolutionByKKR {
 
-        //이렇게 될 시에 이름 중복이 해결이 안됨
+        //이름 중복 해결
         public String solution1(String[] participant, String[] completion) {
             Map<String, Integer> memo = new HashMap<>();
             for (int i = 0; i < participant.length; i++) {
                 String key = participant[i];
+                if(memo.containsKey(key)){
+                    memo.put(key,memo.get(key)+1);
+                    continue;
+                }
                 memo.put(key, 1);
             }
             for (int i = 0; i < completion.length; i++) {
                 String key = completion[i]; // value 1
-                memo.put(key, 0);
+                memo.put(key, memo.get(key)-1);
             }
             for (String key : memo.keySet()) {
                 if (memo.get(key) == 1) {
