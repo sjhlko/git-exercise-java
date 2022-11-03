@@ -55,10 +55,16 @@ public class Eratostenes {
 
         //2의배수 지우기
         //checks[4]부터 지우면됨
-        int multipleOf = 2;
-        for(int i=2;i<nums.length;i+=2){
-            checks[i] = false;
+
+        //if(N==2) return 1; 테스트케이스중 N==2인 경우 예외처리
+        for (int j = 0; j*j <= N; j++) {
+            int multipleOf = nums[j];
+            //j=2일때 초항이 2이고 공차가 2인 등차수열이므로 i = nums[j]+j;
+            for(int i= nums[j]+j;i<nums.length;i+=multipleOf){
+                checks[i] = false;
+            }
         }
+
         for(int i=0;i<nums.length;i++){
             if(checks[i])
                 System.out.printf("%d ",nums[i]);
