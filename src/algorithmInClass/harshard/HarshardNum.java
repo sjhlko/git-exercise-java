@@ -1,7 +1,12 @@
 package algorithmInClass.harshard;
 
 public class HarshardNum {
-    private int N = 687;
+    private int N;
+
+    public HarshardNum(int n) {
+        N = n;
+    }
+
     public int sumDigit(int N){
         int ans = 0;
         while(N!=0){
@@ -11,9 +16,15 @@ public class HarshardNum {
         return ans;
     }
 
+    public boolean isHarshard(int sum){
+        if(this.N%sum==0)
+            return true;
+        return false;
+    }
+
     public static void main(String[] args) {
-        HarshardNum hn = new HarshardNum();
-        System.out.println(hn.sumDigit(hn.N));
+        HarshardNum hn = new HarshardNum(10);
+        System.out.println(hn.isHarshard(hn.sumDigit(hn.N)));
     }
 
 }
