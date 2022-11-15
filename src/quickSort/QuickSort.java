@@ -15,6 +15,8 @@ public class QuickSort {
     //강사님 풀이
     public List<Integer> sort(List<Integer> arr) {
 
+        //비어있을 수 도 있음
+        if(arr.size()<=1) return arr;
         // 1. 기준값 뽑는 로직 구현
         int pivot = arr.get(arr.size() / 2); // 5
         System.out.println(pivot);
