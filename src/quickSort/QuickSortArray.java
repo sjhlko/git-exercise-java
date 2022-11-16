@@ -8,9 +8,9 @@ public class QuickSortArray {
         int leftPointer = 0;
         int rightPointer = arr.length-1;
         while(leftPointer<=rightPointer){
-            while(arr[leftPointer]<pivot&&leftPointer<=rightPointer)
+            while(arr[leftPointer]<pivot)
                 leftPointer++;
-            while (arr[rightPointer]>pivot&&leftPointer<=rightPointer)
+            while (arr[rightPointer]>pivot)
                 rightPointer--;
             if(leftPointer<=rightPointer){
                 int tmp = arr[leftPointer];
