@@ -1,13 +1,18 @@
 package quickSort;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class QuickSortArray {
-    public void sort(int[] arr){
-        int pivot = arr[arr.length/2];
-        int leftPointer = 0;
-        int rightPointer = arr.length-1;
-        while(leftPointer<=rightPointer){
+    public void sort(int[] arr, int start, int end){
+        int leftPointer = start;
+        int rightPointer = end;
+        if(leftPointer>=rightPointer)
+            return;
+        int pivotPointer = (rightPointer+leftPointer)/2;
+        int pivot = arr[pivotPointer];
+        while(leftPointer<rightPointer){
             while(arr[leftPointer]<pivot)
                 leftPointer++;
             while (arr[rightPointer]>pivot)
@@ -20,11 +25,14 @@ public class QuickSortArray {
                 rightPointer--;
             }
         }
+
+        sort(arr,start,rightPointer);
+        sort(arr,leftPointer,end);
     }
     public static void main(String[] args) {
         int[] arr = new int[]{20, 18, 5, 19, 40, 50, 5, 25};
         QuickSortArray quickSortArray = new QuickSortArray();
-        quickSortArray.sort(arr);
+        quickSortArray.sort(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
 }
