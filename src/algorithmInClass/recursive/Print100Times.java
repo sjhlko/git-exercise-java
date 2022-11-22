@@ -16,6 +16,13 @@ public class Print100Times {
         return list.remove(0)+plusList(list);
     }
 
+    public int plusArr(int[] arr, int index){
+        if(index==arr.length)
+            return 0;
+        return arr[index]+plusArr(arr,index+1);
+    }
+
+
     public static void main(String[] args) {
         Print100Times p = new Print100Times();
         p.print(1);
@@ -25,5 +32,8 @@ public class Print100Times {
         list.add(2);
         list.add(9);
         System.out.println(p.plusList(list));
+        int[] arr = {7,3,2,9};
+        System.out.println(p.plusArr(arr,0));
+
     }
 }
