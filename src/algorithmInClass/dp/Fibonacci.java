@@ -3,7 +3,7 @@ package algorithmInClass.dp;
 import java.util.Scanner;
 
 public class Fibonacci {
-    public static void main(String[] args) {
+    public void fibonacci(){
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
         int[] arr = new int[size+1];
@@ -12,5 +12,8 @@ public class Fibonacci {
             arr[i] = arr[i-1]+arr[i-2];
         }
         System.out.println(arr[size]);
+    }
+    public static void main(String[] args) {
+
     }
 }
